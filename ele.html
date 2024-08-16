@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOT ELEPHAT BET</title>
+    <title>BOT VENCEDOR</title>
     <style>
         body {
             margin: 0;
@@ -49,6 +49,13 @@
             color: #fff;
             text-align: center;
         }
+        .percentage-text {
+            background-color: rgba(0, 255, 0, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
         iframe {
             width: 100%;
             height: calc(100vh - 200px); /* Adjusted height to fit below the text containers */
@@ -60,51 +67,24 @@
 </head>
 <body>
     <div class="container">
-        <div class="text" id="dynamicText">REGISTRE-SE ANTES QUE O BOT SEJA PAGO</div>
+        <div class="text" id="dynamicText">CALCULANDO...</div>
     </div>
     <div class="values-container" id="valuesContainer">
-        <div class="random-value" id="hours">00</div>
-        <div class="random-value" id="minutes">00</div>
-        <div class="random-value" id="seconds">00</div>
+        <div class="random-value percentage-text" id="percentageText">--</div>
+        <div class="random-value" id="randomValue2">--</div>
+        <div class="random-value" id="randomXValue">--</div>
     </div>
     <iframe src="https://record.elephantbet.com/_zHW607rR29IWqcfzuvZcQGNd7ZgqdRLk/1/"></iframe>
     <script>
-        let countdownTime = 300; // 5 minutos em segundos
-
-        function updateCountdown() {
-            let hours = Math.floor(countdownTime / 3600);
-            let minutes = Math.floor((countdownTime % 3600) / 60);
-            let seconds = countdownTime % 60;
-
-            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-
-            countdownTime--;
-
-            if (countdownTime < 0) {
-                redirectToElePage(); // Redireciona para "ele.html"
-            }
-        }
-
-        function redirectToElePage() {
-            window.location.href = "ele.html"; // Redireciona para a página "ele.html"
-        }
-
-        function startBot() {
-            document.getElementById("dynamicText").innerText = "CALCULANDO...";
-            setInterval(changeText, 18000); // 18000 ms = 18 segundos
-            setInterval(changePercentage, 18000); // 18000 ms = 18 segundos
-            setInterval(changeRandomXValue, 18000); // 18000 ms = 18 segundos
-        }
+        const texts = ["POSSÍVEL AZUL", "POSSÍVEL ROXO", "POSSÍVEL ROSA"];
 
         function getRandomNumber(min, max) {
             return (Math.random() * (max - min) + min).toFixed(2);
         }
 
         function changeText() {
-            const texts = ["POSSÍVEL AZUL", "POSSÍVEL ROXO", "POSSÍVEL ROSA"];
-            const probabilities = [0.6, 0.35, 0.05];
+            // Ajustando a distribuição dos índices para reduzir a probabilidade de "POSSÍVEL ROSA"
+            const probabilities = [0.6, 0.35, 0.05]; // 60% para "POSSÍVEL AZUL", 35% para "POSSÍVEL ROXO", 5% para "POSSÍVEL ROSA"
             const random = Math.random();
             let cumulative = 0;
             let selectedIndex;
@@ -143,8 +123,9 @@
             document.getElementById("randomXValue").innerText = `${getRandomNumber(1.5, 2.50)}X`;
         }
 
-        // Inicia a contagem regressiva imediatamente ao carregar a página
-        setInterval(updateCountdown, 1000); // 1000 ms = 1 segundo
+        setInterval(changeText, 18000); // 18000 ms = 18 segundos
+        setInterval(changePercentage, 18000); // 18000 ms = 18 segundos
+        setInterval(changeRandomXValue, 18000); // 18000 ms = 18 segundos
     </script>
 </body>
 </html>
