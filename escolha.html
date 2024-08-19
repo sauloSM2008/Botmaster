@@ -5,32 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha a Casa de Aposta</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #e9ecef;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #D42F2F;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+            margin: 0; /* Remove margens padrão */
         }
 
         .container {
             text-align: center;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            max-width: 800px;
+            padding: 20px;
+            background-color: #111010;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 30px;
+            font-size: 14px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
         }
 
         .betting-houses {
@@ -41,30 +37,26 @@
         }
 
         .betting-house {
-            border: none;
-            border-radius: 15px;
+            border: 1px solid #ddd;
+            background: white;
+            height: 100px;
+            width: 340px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .betting-house:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .betting-house img {
             display: block;
-            width: 220px;
-            height: 120px;
+            width: 200px;
+            height: 100px;
             object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .betting-house a {
-            display: block;
-            text-decoration: none;
-            color: inherit;
         }
 
         @media (max-width: 600px) {
@@ -73,19 +65,33 @@
                 height: auto;
             }
         }
+        
+        #img {
+            width: 340px;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
+  
     <div class="container">
-        <h1>Escolha a Casa de Aposta</h1>
+        <h1>ESCOLHA AGORA UMA CASA DE APOSTAS PARA SE REGISTRAR E COMEÇAR A UTILIZAR O BOT</h1>
         <div class="betting-houses">
             <div class="betting-house">
-                <a href="moz.html">
-                    <img src="ele.jpeg" alt="Casa de Aposta 1">
+                <a href="premi.html">
+                    <img id="img" src="pre.png" alt="Casa de Aposta 1">
                 </a>
             </div>
-          
-          
+            <div class="betting-house">
+                <a href="plamoz.html">
+                    <img id="img" src="pla.png" alt="Casa de Aposta 2">
+                </a>
+            </div>
+            <div class="betting-house">
+                <a href="moz.html">
+                    <img id="img" src="ele.png" alt="Casa de Aposta 3">
+                </a>
+            </div>
             <!-- Adicione mais casas de apostas conforme necessário -->
         </div>
     </div>
