@@ -13,6 +13,7 @@
             align-items: center;
             height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
             margin: 0; /* Remove margens padrão */
+            flex-direction: column;
         }
 
         .container {
@@ -21,6 +22,7 @@
             background-color: #111010;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Espaçamento entre container e anúncio */
         }
 
         h1 {
@@ -65,11 +67,42 @@
                 height: auto;
             }
         }
-        
+
         #img {
             width: 340px;
             height: 100px;
         }
+
+        .ad-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 15px;
+        }
+
+        .ad-container img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+ 
+
+ 
     </style>
 </head>
 <body>
@@ -101,5 +134,21 @@
             <!-- Adicione mais casas de apostas conforme necessário -->
         </div>
     </div>
+
+    <!-- Container do Anúncio -->
+    <div class="ad-container" id="ad-container">
+        <img onclick="anu()" id="anu" src="win.png" alt="Anúncio">
+        <button class="close-btn" onclick="closeAd()">X</button>
+    </div>
+
+    <script>
+        function closeAd() {
+            document.getElementById('ad-container').style.display = 'none';
+        }
+        
+        function anu() {
+          window.open("https://track.africabetpartners.com/visit/?bta=36968&nci=6278")
+        }
+    </script>
 </body>
 </html>
